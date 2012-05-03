@@ -1,0 +1,64 @@
+<head>
+  <title>Tunes Love</title>
+</head>
+
+<body>
+  <div class="container" role="main">
+    <header>
+      <h1>Tunes Love <i class="icon-music"></i></h1>
+    </header>
+
+    <section id="queue_song">
+      {{>queue_song}}
+    </section>
+
+    <section id="da_list">
+      {{>da_list}}
+    </section>
+  </div>
+
+  <footer>Created by <a href="http://cobbweb.me/">Cobdaddy</a></footer>
+</body>
+
+<template name="queue_song">
+  <form action="#" class="well">
+    <label for="artist">Artist</label>
+    <input type="text" name="artist" id="artist" placeholder="Artist...">
+
+    <label for="song-title">Song</label>
+    <input type="text" name="song-title" id="song-title" placeholder="Song title...">
+
+    <div>
+      <input type="submit" value="Queue Song" class="btn btn-primary">
+    </div>
+  </form>
+</template>
+
+<template name="da_list">
+  <h2>Da List</h2>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Song</th>
+        <th>Artist</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each songs}}
+        {{>list_item}}
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="list_item">
+  <tr>
+    <td>0</td>
+    <td>{{song}}</td>
+    <td>{{artist}}</td>
+    <td><button class="btn"><i class="icon-remove"></i></button></td>
+  </tr>
+</template>
