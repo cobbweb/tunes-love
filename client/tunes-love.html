@@ -8,7 +8,12 @@
       <h1>Tunes Love <i class="icon-music"></i></h1>
     </header>
 
-    <section id="queue_song">
+    <section id="queue_song" class="well">
+      <div>
+        <h4>Now Playing</h4>
+        <div><i class="icon-music"></i> <span id="now-playing"></span></div>
+      </div>
+      <hr>
       {{>queue_song}}
     </section>
 
@@ -21,7 +26,7 @@
 </body>
 
 <template name="queue_song">
-  <form action="#" class="well">
+  <form action="#">
     <label for="artist">Artist</label>
     <input type="text" name="artist" id="artist" placeholder="Artist...">
 
@@ -56,7 +61,7 @@
 
 <template name="list_item">
   <tr>
-    <td>0</td>
+    <td>{{rank}}</td>
     <td>{{song}}</td>
     <td>{{artist}}</td>
     <td><button class="btn"><i class="icon-remove"></i></button></td>
